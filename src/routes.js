@@ -1,6 +1,7 @@
 const {Router} = require('express')
 const productsController = require('./controllers/products-controller')
 const customersController = require('./controllers/customers-controller')
+const ordersController = require('./controllers/orders-controller')
 
 const router = Router()
 
@@ -17,6 +18,12 @@ router.get('/customers/:id', customersController.show)
 router.post('/customers', customersController.create)
 router.put('/customers/:id', customersController.update)
 router.delete('/customers/:id', customersController.delete)
+
+//routes for the orders
+router.get('/orders', ordersController.index)
+router.post('/orders', ordersController.create)
+router.get('/orders/:id', ordersController.show)
+router.delete('/orders/:id', ordersController.delete)
 
 module.exports = router
 
